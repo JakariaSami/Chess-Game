@@ -8,13 +8,17 @@ This is a multiplayer Chess game implemented using TypeScript, React.js, Tailwin
 - **Multiple Games:** Supports multiple games simultaneously, allowing more than two players to play at the same time.
 - **Real-time Updates:** Game updates and moves are broadcasted to all players in real-time via WebSockets.
 
+## Screenshots
+
+
 ## How to Play
 
 1. Clone or download this repository.
 2. Install dependencies by running `npm install`.
-3. Start the development server by running `npm start`.
-4. Open two browser windows and navigate to `http://localhost:8080` to simulate two players.
-5. Start playing the game by making moves and observing real-time updates.
+3. Start the backend development server by running `npm start`.
+4. Start Vite frontend server by running `npm run dev`.
+5. Open two browser windows and navigate to `http://localhost:5173` to simulate two players.
+6. Start playing the game by making moves and observing real-time updates.
 
 ## Technologies Used
 

@@ -9,7 +9,9 @@ This is a multiplayer Chess game implemented using TypeScript, React.js, Tailwin
 - **Real-time Updates:** Game updates and moves are broadcasted to all players in real-time via WebSockets.
 
 ## Screenshots
-
+<img src="screenshots/Home%20page.png" width="500" />
+<img src="screenshots/Game%20page.png" width="500" />
+<img src="screenshots/Gameplay.png" width="500" />
 
 ## How to Play
 

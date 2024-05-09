@@ -2,6 +2,8 @@
 
 This is a multiplayer Chess game implemented using TypeScript, React.js, Tailwind CSS, and WebSockets. Players can play against each other from anywhere, as the game supports multiplayer functionality through WebSocket communication. 
 
+Live at: https://jakaria-chess-game.netlify.app/
+
 ## Features
 
 - **Multiplayer Support:** Players can play against each other from different locations.

@@ -11,9 +11,10 @@ export const GAME_OVER = "game_over";
 
 export const Game = () => {
   const socket = useSocket();
-  const [chess, setChess] = useState(new Chess());
+  const [chess] = useState(new Chess());
   const [board, setBoard] = useState(chess.board());
   const [started, setStarted] = useState(false);
+  const [color, setColor] = useState<string | null>(null);
 
   useEffect(() => {
     if (!socket) {
@@ -25,7 +26,8 @@ export const Game = () => {
         case INIT_GAME:
           setBoard(chess.board());
           setStarted(true);
-          console.log("Game started");
+          setColor(message.payload.color);
+          alert(`Game started, you are ${message.payload.color}`);
           break;
         case MOVE:
           // eslint-disable-next-line no-case-declarations
@@ -35,10 +37,11 @@ export const Game = () => {
           console.log("Move made");
           break;
         case GAME_OVER:
-          console.log("Game over!");
+          alert("Game over!");
           break;
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
   if (!socket) return <div>Connecting...</div>;
   return (
@@ -53,10 +56,11 @@ export const Game = () => {
               board={board}
             />
           </div>
-          <div className="col-span-2 bg-gray-700 w-full flex justify-center">
-            <div className="pt-8">
+          <div className="col-span-2 bg-gray-700 w-full flex justify-center p-8">
+            <div>
               {!started && (
                 <Button
+                  className="mb-4"
                   onClick={() => {
                     socket.send(
                       JSON.stringify({
@@ -68,6 +72,25 @@ export const Game = () => {
                   Play
                 </Button>
               )}
+              <div className="text-white text-lg">
+                <ul className="list-disc flex flex-col space-y-4">
+                  {color && (
+                    <h3 className="text-2xl p-2 bg-green-600 rounded-md text-center">
+                      You are {color}
+                    </h3>
+                  )}
+                  <li>
+                    Click the 'Play' button and wait for an opponent to join
+                    you, or join an existing waiting player.
+                  </li>
+                  <li>Do not click the button more than once.</li>
+                  <li>
+                    Select a chess piece, then click where you'd like to move it
+                    on the board.
+                  </li>
+                  <li>Do not touch your opponent's chess pieces.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

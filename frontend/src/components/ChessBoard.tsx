@@ -55,7 +55,7 @@ export const ChessBoard = ({
                     }
                   }}
                   key={j}
-                  className={`w-16 h-16 ${
+                  className={`w-10 h-10 md:w-16 md:h-16 sm:w-12 sm:h-12 ${
                     (i + j) % 2 === 0 ? "bg-[#779556]" : "bg-[#ebecd0]"
                   }`}
                 >

@@ -47,8 +47,8 @@ export const Game = () => {
   return (
     <div className="justify-center flex">
       <div className="pt-8 max-w-screen-lg w-full">
-        <div className="grid grid-cols-6 gap-4 w-full">
-          <div className="col-span-4 w-full flex justify-center">
+        <div className="grid grid-cols-6 gap-4 w-full flex-col">
+          <div className="md:col-span-4 col-span-6 w-full flex justify-center">
             <ChessBoard
               chess={chess}
               setBoard={setBoard}
@@ -56,7 +56,7 @@ export const Game = () => {
               board={board}
             />
           </div>
-          <div className="col-span-2 bg-gray-700 w-full flex justify-center p-8">
+          <div className="md:col-span-2 col-span-6 bg-gray-700 rounded-md w-full flex justify-center p-8">
             <div>
               {!started && (
                 <Button

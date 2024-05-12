@@ -43,7 +43,7 @@ export const Game = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
-  if (!socket) return <div>Connecting...</div>;
+  if (!socket) return <div className="text-white flex justify-center text-3xl bg-green-600 p-3">Connecting...</div>;
   return (
     <div className="justify-center flex">
       <div className="pt-8 max-w-screen-lg w-full">
